@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Road Dodge — ArcadAi Workshop Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <h1 class="game-title">ROAD DODGE</h1>
+    <p class="game-subtitle">Dodge the traffic. Survive as long as you can.</p>
+
+    <div class="hud">
+      <div class="hud-box">Score: <span id="score">0</span></div>
+      <div class="hud-box">Level: <span id="level">1</span></div>
+      <div class="hud-box">Best: <span id="best">0</span></div>
+      <button id="pauseBtn" type="button">Pause</button>
+      <button id="soundBtn" type="button">Sound: On</button>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="game" width="400" height="600"></canvas>
+
+      <!-- Start screen -->
+      <div id="startScreen" class="overlay">
+        <h2>Ready?</h2>
+        <p>Move with ← → or A / D keys,<br />or tap the buttons below on mobile.</p>
+        <button id="startBtn" type="button">Start Game</button>
+      </div>
+
+      <!-- Pause screen -->
+      <div id="pauseScreen" class="overlay hidden">
+        <h2>Paused</h2>
+        <p>Press P or tap Resume to keep driving.</p>
+        <button id="resumeBtn" type="button">Resume</button>
+      </div>
+
+      <!-- Game over screen -->
+      <div id="gameOverScreen" class="overlay hidden">
+        <h2>Game Over</h2>
+        <p>Score: <span id="finalScore">0</span></p>
+        <p>Best: <span id="finalBest">0</span></p>
+        <button id="restartBtn" type="button">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Mobile touch controls -->
+    <div class="touch-controls">
+      <button id="leftBtn" type="button" aria-label="Move left">◀ Left</button>
+      <button id="rightBtn" type="button" aria-label="Move right">Right ▶</button>
+    </div>
+
+    <p class="how-to">Controls: ← / → or A / D to steer &nbsp;•&nbsp; P to pause &nbsp;•&nbsp; Traffic gets faster every level.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

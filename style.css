@@ -1,0 +1,138 @@
+/* Road Dodge — styling
+   Edit 1: arcade title font + glow
+   Edit 2: player / traffic colours
+   Edit 3: dark road with animated dashed lanes
+   Edit 4: larger, rounded HUD score boxes
+   Edit 5: rounded buttons with a hover lift */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-shell {
+  width: 100%;
+  max-width: 460px;
+  padding: 20px 12px 32px;
+  text-align: center;
+}
+
+/* Edit 1 — title: chunky arcade look, cyan glow, larger than the default */
+.game-title {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 44px;
+  letter-spacing: 4px;
+  color: #22d3ee;
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.9), 2px 2px 0 #0e7490;
+}
+
+.game-subtitle {
+  margin: 6px 0 16px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+/* Edit 4 — HUD: bigger score text, rounded boxes */
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.hud-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hud-box span { color: #facc15; }
+
+/* Edit 5 — buttons: rounded, yellow, lift on hover */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #facc15;
+  color: #111827;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+button:hover { background: #fde047; transform: translateY(-2px); }
+button:active { transform: translateY(0); }
+
+.canvas-wrap {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Edit 3 — the canvas itself is drawn in JS, but its frame is dark asphalt */
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #1f2937;
+  border: 4px solid #facc15;
+  border-radius: 16px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.overlay h2 {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 36px;
+  color: #22d3ee;
+  text-shadow: 0 0 14px rgba(34, 211, 238, 0.8);
+}
+
+.overlay p { margin: 0; color: #e2e8f0; }
+.hidden { display: none; }
+
+.touch-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.touch-controls button {
+  flex: 1;
+  max-width: 180px;
+  padding: 14px;
+  font-size: 17px;
+  background: #22d3ee;
+}
+
+.touch-controls button:hover { background: #67e8f9; }
+
+.how-to { color: #94a3b8; font-size: 13px; margin-top: 14px; }
